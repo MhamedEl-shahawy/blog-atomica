@@ -1,0 +1,60 @@
+{
+  "blogs": [
+    {
+      "title": "Technical requirements:",
+      "body": "Use any framework of your choice (preferably React.js).\n\nMock the API delays instead of using static data.\n\nUpload your code to a public repository.\n\nDeploy your application and provide a url.\n\nWrite documentation for your application (Optional).\n\nWrite tests (Optional).\n\nAlso, if you have the opportunity to add more features and tricks to your application, please feel free to (Optional",
+      "author": "yoshi",
+      "id": 1
+    },
+    {
+      "title": "testbasd",
+      "body": "descriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionComment",
+      "author": "ME",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "body": "asdasdasd",
+      "author": "mario",
+      "id": 1,
+      "commentid": 1
+    },
+    {
+      "body": "asdasdasd",
+      "author": "mario",
+      "id": 6,
+      "commentid": 1
+    },
+    {
+      "body": "yalla test 454651213213213213213213",
+      "author": "yoshi",
+      "id": 5,
+      "commentid": 2
+    },
+    {
+      "body": "test new one",
+      "author": "yoshi",
+      "id": 4,
+      "commentid": 2
+    },
+    {
+      "body": "yeah new comment",
+      "author": "sahahwy",
+      "id": 1655676955095,
+      "commentid": "1"
+    },
+    {
+      "body": "test edit with me ya man",
+      "author": "mohamed elsahahwy",
+      "id": 1655677058967,
+      "commentid": "1"
+    },
+    {
+      "body": "xczc",
+      "author": "czx",
+      "id": 1655677203678,
+      "commentid": "1"
+    }
+  ]
+}

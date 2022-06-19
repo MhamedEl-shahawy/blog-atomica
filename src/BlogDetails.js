@@ -1,31 +1,77 @@
+import {useState,userId} from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
-
+import useFetchComment from "./useFetchComment";
+import Dialog from "./Dialog";
 const BlogDetails = () => {
   const { id } = useParams();
   const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+  const { data: comments} = useFetchComment('http://localhost:8000/comments?commentid=' + id);
+  const [show, setShow] = useState(false);
+  const [commentData, setCommentData] = useState({});
+  const [authorComment,setAuthorComment] = useState('');
+  const [descriptionComment, setDescriptionComment] = useState('');
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    fetch('http://localhost:8000/blogs/' + blog.id, {
+  const handleClick = (val) => {
+    fetch(`http://localhost:8000/${val.updatePath}/` + val.id, {
       method: 'DELETE'
     }).then(() => {
       navigate('/');
     }) 
   }
-
+  const handleDialog = (val) => {
+    setShow(true);
+    setCommentData(val);
+  };
+  const handleComment = (e) => {
+    e.preventDefault();
+    fetch('http://localhost:8000/comments/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        "body": descriptionComment,
+        "author": authorComment,
+        "id":Date.now() ,
+        "commentid": id
+      })
+    }).then(() => {
+      navigate('/');
+    })
+  }
   return (
     <div className="blog-details">
       { isPending && <div>Loading...</div> }
       { error && <div>{ error }</div> }
       { blog && (
+        <>
         <article>
           <h2>{ blog.title }</h2>
           <p>Written by { blog.author }</p>
           <div>{ blog.body }</div>
-          <button onClick={handleClick}>delete</button>
+          <button onClick={()=>handleClick({...blog,updatePath: 'blogs'})}>delete</button>
+          <button onClick={()=>handleDialog({...blog,updatePath: 'blogs'})}>edit</button>
         </article>
+        <form onSubmit={(e)=> handleComment(e)}>
+           <div>
+              <input type="text"   value={authorComment} placeholder="author name" onChange={(e)=>setAuthorComment(e.target.value)} />
+            </div>  
+            <div>
+              <textarea type="text"   value={descriptionComment} placeholder="comment description" onChange={(e)=>setDescriptionComment(e.target.value)} />
+            </div>  
+            <button type='submit'>Add Comment</button>
+        </form>
+        </>
       )}
+      { comments &&(comments.map(comment => (
+        <div className='comment' key={comment.id}>
+          <div>{ comment.body }</div>
+          <p>Written by { comment.author }</p>
+          <button onClick={()=>handleClick({...comment,updatePath: 'comments'})}>delete</button>
+          <button onClick={()=>handleDialog({...comment,updatePath: 'comments'})}>edit</button>
+        </div>
+        )))}
+       {show &&<Dialog   data={commentData}/>}
     </div>
   );
 }

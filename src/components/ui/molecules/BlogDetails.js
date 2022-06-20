@@ -12,7 +12,6 @@ const BlogDetails = () => {
   const [authorComment,setAuthorComment] = useState('');
   const [descriptionComment, setDescriptionComment] = useState('');
   const navigate = useNavigate();
-
   const handleClick = (val) => {
     fetch(`${process.env.REACT_APP_API_ROOT}${val.updatePath}/` + val.id, {
       method: 'DELETE'
@@ -54,10 +53,10 @@ const BlogDetails = () => {
         </article>
         <form onSubmit={(e)=> handleComment(e)}>
            <div>
-              <input type="text"   value={authorComment} placeholder="author name" onChange={(e)=>setAuthorComment(e.target.value)} />
+              <input type="text"  value={authorComment} placeholder="author name" onChange={(e)=>setAuthorComment(e.target.value)}  required/>
             </div>  
             <div>
-              <textarea type="text"   value={descriptionComment} placeholder="comment description" onChange={(e)=>setDescriptionComment(e.target.value)} />
+              <textarea type="text"   value={descriptionComment} placeholder="comment description" onChange={(e)=>setDescriptionComment(e.target.value)} required/>
             </div>  
             <button type='submit'>Add Comment</button>
         </form>

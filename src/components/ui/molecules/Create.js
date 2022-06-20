@@ -41,6 +41,7 @@ const Create = () => {
         <input
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+          required
         />
   
         <button>Add Blog</button>

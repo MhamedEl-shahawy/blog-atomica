@@ -28,13 +28,13 @@ import { useNavigate } from "react-router-dom";
          <form onSubmit={(e)=> handleUpdate(e)}>
          <div>
             <label htmlFor='description'>Description of {data.updatePath}</label>
-            <textarea className='textarea-comment' id="description" type="text" onChange={(e)=> setBody(e.target.value)} defaultValue={data.body} />
+            <textarea className='textarea-comment' id="description" type="text" onChange={(e)=> setBody(e.target.value)} defaultValue={data.body} required/>
          </div>
             <div>
             {data?.title&&
             <>
             <label htmlFor='title'>Description of Title</label>
-            <textarea className='textarea-comment' id="title" type="text" onChange={(e)=> setTitle(e.target.value)} defaultValue={data.title} />}
+            <textarea className='textarea-comment' id="title" type="text" onChange={(e)=> setTitle(e.target.value)} defaultValue={data.title} required/>}
             </>
              }
              </div>

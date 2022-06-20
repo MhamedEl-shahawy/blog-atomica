@@ -14,7 +14,7 @@ const BlogDetails = () => {
   const navigate = useNavigate();
 
   const handleClick = (val) => {
-    fetch(`http://localhost:8000/${val.updatePath}/` + val.id, {
+    fetch(`${process.env.REACT_APP_API_ROOT}${val.updatePath}/` + val.id, {
       method: 'DELETE'
     }).then(() => {
       navigate('/');
@@ -26,7 +26,7 @@ const BlogDetails = () => {
   };
   const handleComment = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8000/comments/', {
+    fetch(`${process.env.REACT_APP_API_ROOT}comments/`, {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

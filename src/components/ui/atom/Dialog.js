@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:8000/${data.updatePath}/${data.id}`, {
+        fetch(`${process.env.REACT_APP_API_ROOT}${data.updatePath}/${data.id}`, {
             method: 'PUT',
             headers: { "Content-Type": "application/json" },
             body:JSON.stringify({

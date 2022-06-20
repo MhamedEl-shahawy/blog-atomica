@@ -5,8 +5,8 @@ import useFetchComment from "hooks/useFetchComment";
 import Dialog from "components/ui/atom/Dialog";
 const BlogDetails = () => {
   const { id } = useParams();
-  const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
-  const { data: comments} = useFetchComment('http://localhost:8000/comments?commentid=' + id);
+  const { data: blog, error, isPending } = useFetch(`${process.env.REACT_APP_API_ROOT}blogs/` + id);
+  const { data: comments} = useFetchComment(`${process.env.REACT_APP_API_ROOT}comments?commentid=` + id);
   const [show, setShow] = useState(false);
   const [commentData, setCommentData] = useState({});
   const [authorComment,setAuthorComment] = useState('');

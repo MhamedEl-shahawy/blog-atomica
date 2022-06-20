@@ -1,9 +1,9 @@
-import Navbar from './Navbar';
-import Home from './Home';
+import Navbar from 'components/ui/atom/Navbar';
+import Home from 'components/ui/molecules/Home';
 import {Routes, Route } from 'react-router-dom';
-import Create from './Create';
-import BlogDetails from './BlogDetails';
-import NotFound from './NotFound';
+import Create from 'components/ui/molecules/Create';
+import BlogDetails from 'components/ui/molecules/BlogDetails';
+import NotFound from 'components/ui/molecules/NotFound';
 
 function App() {
   return (

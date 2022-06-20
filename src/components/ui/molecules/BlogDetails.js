@@ -1,8 +1,8 @@
-import {useState,userId} from 'react';
+import {useState} from 'react';
 import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "./useFetch";
-import useFetchComment from "./useFetchComment";
-import Dialog from "./Dialog";
+import useFetch from "hooks/useFetch";
+import useFetchComment from "hooks/useFetchComment";
+import Dialog from "components/ui/atom/Dialog";
 const BlogDetails = () => {
   const { id } = useParams();
   const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);

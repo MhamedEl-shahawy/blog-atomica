@@ -1,5 +1,5 @@
-import BlogList from "./BlogList";
-import useFetch from "./useFetch";
+import BlogList from "components/ui/atom/BlogList";
+import useFetch from "hooks/useFetch";
 
 const Home = () => {
   const { error, isPending, data: blogs } = useFetch('http://localhost:8000/blogs')

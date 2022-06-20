@@ -7,15 +7,15 @@
       "id": 1
     },
     {
-      "title": "testbasd",
-      "body": "descriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionCommentdescriptionComment",
-      "author": "ME",
-      "id": 2
+      "title": "noculating Against Fake News About COVID-19",
+      "body": "The outbreak of the SARS-CoV-2 novel coronavirus (COVID-19) has been accompanied by a large amount of misleading and false information about the virus, especially on social media. In this article, we explore the coronavirus “infodemic” and how behavioral scientists may seek to address this problem. We detail the scope of the problem and discuss the negative influence that COVID-19 misinformation can have on the widespread adoption of health protective behaviors in the population. In response, we explore how insights from the behavioral sciences can be leveraged to manage an effective societal response to curb the spread of misinformation about the virus. In particular, we discuss the theory of psychological inoculation (or prebunking) as an efficient vehicle for conferring large-scale psychological resistance against fake news.\n\n",
+      "author": "ahmed mahmoud",
+      "id": 3
     }
   ],
   "comments": [
     {
-      "body": "asdasdasd",
+      "body": "perfect tool",
       "author": "mario",
       "id": 1,
       "commentid": 1
@@ -25,12 +25,6 @@
       "author": "mario",
       "id": 6,
       "commentid": 1
-    },
-    {
-      "body": "yalla test 454651213213213213213213",
-      "author": "yoshi",
-      "id": 5,
-      "commentid": 2
     },
     {
       "body": "test new one",
@@ -55,6 +49,12 @@
       "author": "czx",
       "id": 1655677203678,
       "commentid": "1"
+    },
+    {
+      "body": "You should’ve included an example ",
+      "author": "esasm mounir",
+      "id": 1655723378327,
+      "commentid": "3"
     }
   ]
 }
